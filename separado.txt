@@ -1,0 +1,56 @@
+
+
+escreval("Qual plano de assinatura você deseja escolher:")
+       escreval("1 - Prata -   19,90R$")
+       escreval("2 - Ouro -    29,90R$")
+       escreval("3 - platina - 49,90R$ ")
+       leia (escolhaPlano)
+
+         escolha (EscolhaPlano)
+           caso "1"
+             escolhaPlano <- "Prata"
+           caso "2"
+             escolhaPlano <- "Ouro"
+           caso "3"
+             escolhaPlano <- "Platina"
+         fimescolha
+         limpatela
+
+       escreval("Escolha a forma de pagamento: ")
+       escreval("1 - Cartão crédito/débito")
+       escreval("2 - Boleto")
+       escreval("3 - Pix")
+       leia(FormaDePag)
+
+        escolha (FormaDePag)
+          caso "1"
+            FormaDePag <- "Cartão"
+          caso "2"
+            FormaDePag <- "Boleto"
+          caso "3"
+            FormaDePag <- "P"
+            fimescolha
+            limpatela
+
+      escreval("Digite 1 para confirmar o pagamento e finalizar o cadastro: ")
+      escreval()
+      leia (ConfirmCadastro)
+        se (ConfirmCadastro = "1") entao
+          limpatela
+          escreval ("CADASTRO FINALIZADO")
+          escreval ("nome: ",nome)
+          escreval ("CPF: ",CPF)
+          escreval ("Endereço: ",endereco)
+          escreval ("E-mail " ,email)
+          escreval ("Senha: ************")
+          escreval ("Plano: ",escolhaPlano)
+          escreval ("Forma de pagamento: ", FormaDePag)
+          escreval()
+          escreval("Deseja voltar ao menu inicial? sim ou não")
+          leia(VoltarMenu)
+        fimse
+           se (VoltarMenu = "sim") entao
+             ClienteCadastrado <- Cliente
+           limpatela
+           senao
+           fimse

@@ -2,10 +2,58 @@ Algoritmo "TecFlix
 
 Var
 
-cliente, ClienteCadastrado, VoltarMenu, FormaDePag, OpcaoMenu,nome, endereco, email, senha, CPF, escolhaPlano, ConfirmCadastro: caractere
+cliente, ClienteCadastrado, VoltarMenu, FormaDePag, nome, endereco: caractere
+email, senha, escolhaPlano, ConfirmCadastro:caracter
+OpcaoMenu:caracter
+
+CPF:inteiro
+
+procedimento cadastrar()
+var
 
 inicio
-cliente <- "cliente"
+       escreval("----- CADASTRO DE USUARIOS -----")
+       escreval("Digite seu nome completo: ")
+       leia (nome)
+       escreval ("Digite seu CPF: ")
+       leia (CPF)
+       escreval("Digite seu endereço: ")
+       leia (endereco)
+       escreval("Digite seu e-mail: ")
+       leia(email)
+       escreval("digite sua senha: ")
+       leia (senha)
+
+
+      escreval("Digite 1 para confirmar o pagamento e finalizar o cadastro: ")
+      escreval()
+      leia (ConfirmCadastro)
+        se (ConfirmCadastro = "1") entao
+          limpatela
+          escreval ("CADASTRO FINALIZADO COM SUCESSO")
+          escreval ("nome: ",nome)
+          escreval ("CPF: ",CPF)
+          escreval ("Endereço: ",endereco)
+          escreval ("E-mail " ,email)
+          escreval ("Senha: ************")
+          escreval()
+          escreval("Deseja voltar ao menu inicial? sim ou não")
+          leia(VoltarMenu)
+        fimse
+           se (VoltarMenu = "sim") entao
+             ClienteCadastrado <- nome
+           limpatela
+           senao
+           fimse
+       
+
+fimprocedimento
+
+
+
+//testar cliente e cliente cadastrado
+inicio
+cliente <- nome
 REPITA
 
    escreval("---------------------------------------------------------")
@@ -14,7 +62,7 @@ REPITA
    escreval()
      se(cliente <> ClienteCadastrado ) entao
        escreval("Informe seu nome, por favor:")
-       leia(cliente)
+       leia(nome)
      senao
      fimse
    escreval("---------------------------------------------------------")
@@ -32,71 +80,9 @@ REPITA
 
    escolha OpcaoMenu
      caso "1"
-       escreval("Digite seu nome completo: ")
-       leia (nome)
-       escreval ("Digite seu CPF: ")
-       leia (CPF)
-       escreval("Digite seu endereço: ")
-       leia (endereco)
-       escreval("Digite seu e-mail: ")
-       leia(email)
-       escreval("digite sua senha: ")
-       leia (senha)
-       limpatela
-       escreval("Qual plano de assinatura você deseja escolher:")
-       escreval("1 - Prata -   19,90R$")
-       escreval("2 - Ouro -    29,90R$")
-       escreval("3 - platina - 49,90R$ ")
-       leia (escolhaPlano)
+     //DESENVOLVIMENTO DA AREA DE CADASTRO
+     cadastrar
 
-         escolha (EscolhaPlano)
-           caso "1"
-             escolhaPlano <- "Prata"
-           caso "2"
-             escolhaPlano <- "Ouro"
-           caso "3"
-             escolhaPlano <- "Platina"
-         fimescolha
-         limpatela
-
-       escreval("Escolha a forma de pagamento: ")
-       escreval("1 - Cartão crédito/débito")
-       escreval("2 - Boleto")
-       escreval("3 - Pix")
-       leia(FormaDePag)
-
-        escolha (FormaDePag)
-          caso "1"
-            FormaDePag <- "Cartão"
-          caso "2"
-            FormaDePag <- "Boleto"
-          caso "3"
-            FormaDePag <- "P"
-            fimescolha
-            limpatela
-
-      escreval("Digite 1 para confirmar o pagamento e finalizar o cadastro: ")
-      escreval()
-      leia (ConfirmCadastro)
-        se (ConfirmCadastro = "1") entao
-          limpatela
-          escreval ("CADASTRO FINALIZADO")
-          escreval ("nome: ",nome)
-          escreval ("CPF: ",CPF)
-          escreval ("Endereço: ",endereco)
-          escreval ("E-mail " ,email)
-          escreval ("Senha: ************")
-          escreval ("Plano: ",escolhaPlano)
-          escreval ("Forma de pagamento: ", FormaDePag)
-          escreval()
-          escreval("Deseja voltar ao menu inicial? sim ou não")
-          leia(VoltarMenu)
-        fimse
-           se (VoltarMenu = "sim") entao
-             ClienteCadastrado <- Cliente
-           limpatela
-           senao
-           fimse
      caso "2"
        escreval("1 - Plano Prata: com 80 canais + serviço streaming por R$ 19,00.")
        escreval("2 - Plano Ouro: com 130 canais + serviço streaming por R$ 29,00.")
